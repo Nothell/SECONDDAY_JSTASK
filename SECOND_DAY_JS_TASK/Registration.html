@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Registration</title>	
+	
+</head>
+<body>
+<fieldset>
+<legend>User Details</legend>    
+	<form action="#" onsubmit="return funCheck()">
+		Email ID*<input type="text" name="Email" id='Email'><br>
+		Password*<input type="Password" name="Password" id='Password'><br>
+		Confirm Password*<input type="Password" name='Confirm Password' id="ConfirmPassword"><br>
+		First Name*<input type="text" name="firstname" id='FirstName'><br>
+		Last Name*<input type="text" name="lastname" id='LastName'><br>
+		ZipCode<input type="text" name="ZipCode" id='Opt'><br>
+		<input type="submit" name="submit">
+		<p>(All * mark fields are compulsory)</p>		
+	</form>
+</fieldset>	
+<script type="text/javascript">
+	function funCheck(){				
+
+		var Email=document.getElementById('Email').value;
+		var Password=document.getElementById('Password').value;
+		var ConfirmPassword=document.getElementById('ConfirmPassword').value;
+		var FirstName=document.getElementById('FirstName').value;
+		var LastName=document.getElementById('LastName').value;
+		var regexmail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		var number=/\d+/;
+		
+		
+		if(Email==''){
+			alert("Please enter your email."); 
+        	return false;
+         
+		}
+		if (Password=='' || ConfirmPassword==''){
+			alert('Password should not be empty');
+			return false;
+		}
+	   if (Password!=ConfirmPassword){
+		 	alert("Please Enter Same Password");
+		 	Password.focus();
+		 	return false;		 
+		}
+
+		if (!Email.match(regexmail)){
+			alert("Please enter a valid Email")
+		}
+		if(FirstName.match(number)){
+			alert('Please enter text only');
+
+		}
+		if(LastName.match(number)){
+			alert('Please enter text only');
+		}
+		
+
+		// else if(Password=='' || ConfirmPassword==''){
+		//  	alert('Password should not be empty');
+		//  }
+		// if(Password!=ConfirmPassword){
+		//  	alert('Please enter same Password');
+		//  }
+		if (Email){
+
+		}
+		if(FirstName=='') {
+		  	alert('Name cannot be empty');
+		  	return false;
+		}
+		if(LastName==''){
+		  	alert('Last Name');
+		  	return false;
+		}
+		return true;
+		// var FirstName=document.getElementById("LastName").value;
+		// alert(FirstName);
+		// console.log("hi");
+		// if (FirstName=='') {
+		// 	alert("Please eneter your FirstName.");
+		// 	// FirstName.focus();
+			
+		// }	
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+
+</head>
+<body>
+
+
+<h1>Calculator</h1>
+<input name="number1" type="text"  id='Number1'/></td>
+<input name="number2" type="text" id='Number2'/></td>
+<input type="text" id='result' readonly >
+
+<button onclick="Calculate('1')">+</button>
+<button onclick="Calculate('2')">-</button>
+<button onclick="Calculate('3')">*</button>
+<button onclick="Calculate('4')">/</button>
+
+
+<script type="text/javascript">
+	function Calculate(c){
+	var n1=parseFloat(document.getElementById('Number1').value);
+	var n2=parseFloat(document.getElementById('Number2').value);
+	var answer;
+	var c=c;
+
+	switch(c)
+		{
+		case '1':
+			answer=n1+n2;
+			break;
+		case '2':
+			answer=n1-n2;
+			break;
+		case '3':
+			answer=n1*n2;
+			break;
+		case '4': 
+			answer=n1/n2;
+			break;
+		
+		default:
+			break;
+				
+		}
+document.getElementById('result').value=answer;
+
+	
+
+}
+
+</script>
+
+</body>
+</html>
+</body>
+</html>
